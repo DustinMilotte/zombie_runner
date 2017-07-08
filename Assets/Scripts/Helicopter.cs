@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Helicopter : MonoBehaviour {
+	public Transform target;
+	public float speed = 1f;
 
-	//private bool called;
+	private bool heliCalled = false;
 	private Rigidbody rigidBody;
 
 
@@ -13,10 +15,16 @@ public class Helicopter : MonoBehaviour {
 		rigidBody = GetComponent<Rigidbody> ();
 	}
 
+	void Update (){
+		if(heliCalled){
+			float step = speed * Time.deltaTime;
+			transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+		}
+	}
+
 	void OnDispatchHelicopter (){
 		Debug.Log ("Heli called");
-		//called = true;			
-		rigidBody.velocity = new Vector3 (0f, 0f, 50f);
+		heliCalled = true;			
 	}
 
 }
