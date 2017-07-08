@@ -7,9 +7,7 @@ public class Player : MonoBehaviour {
 	public GameObject landingArea;
 
 	private GameObject playerSpawnPoints;
-	private bool toggleSwitch= false;
-	private bool reSpawn = false;
- 
+
 	// Use this for initialization
 	void Start () {
 

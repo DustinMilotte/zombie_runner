@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Helicopter : MonoBehaviour {
 
-	private bool called;
+	//private bool called;
 	private Rigidbody rigidBody;
 
 
@@ -15,7 +15,7 @@ public class Helicopter : MonoBehaviour {
 
 	void OnDispatchHelicopter (){
 		Debug.Log ("Heli called");
-		called = true;			
+		//called = true;			
 		rigidBody.velocity = new Vector3 (0f, 0f, 50f);
 	}
 
